@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import '../config/routes.dart';
 import '../widgets/app_scaffold.dart';
 import '../widgets/profile_button.dart';
 
@@ -180,6 +182,7 @@ class ProfileScreen extends StatelessWidget {
               child: ElevatedButton.icon(
                 onPressed: () {
                   // Static dummy function
+                  context.go(AppRoutes.signIn);
                 },
                 icon: Icon(
                   Icons.logout,
