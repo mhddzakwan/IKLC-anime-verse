@@ -1,3 +1,4 @@
+import 'package:anime_verse/config/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -29,13 +30,13 @@ class BottomNavigationShell extends StatelessWidget {
 
         final String currentLocation = GoRouterState.of(context).uri.path;
 
-        if (currentLocation == '/home') {
+        if (currentLocation == AppRoutes.home) {
           Navigator.of(context).pop();
         } else {
           if (GoRouter.of(context).canPop()) {
             GoRouter.of(context).pop();
           } else {
-            context.go('/homes');
+            context.go(AppRoutes.home);
           }
         }
       },
@@ -45,10 +46,7 @@ class BottomNavigationShell extends StatelessWidget {
           body: navigationShell,
           extendBody: true,
           bottomNavigationBar: Container(
-            margin: EdgeInsets.symmetric(
-              horizontal: screenWidth * 0.04,
-              vertical: 0,
-            ),
+            margin: EdgeInsets.zero,
             padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
             decoration: const BoxDecoration(
               color: Color(0xFF0b395e),
