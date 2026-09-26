@@ -1,4 +1,4 @@
-import 'anime.dart';
+import '../models/anime.dart';
 
 class DummyData {
   static final List<Anime> animeList = [
